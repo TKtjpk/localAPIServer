@@ -5,10 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-//import org.springframework.http.MediaType;
-//import org.springframework.web.bind.annotation.*;
-
-//import java.util.List;
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/demo") // This means URL's start with /demo (after Application path)
@@ -29,13 +25,11 @@ public class MainController {
 //        userRepository.save(n);
 //        return "Saved";
 //    }
-
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Temperatures> getAllData() {
         // This returns a JSON or XML with the users
         return dataRepository.findAll();
     }
-
     @GetMapping(value = "/temp/lessThan")
     public ResponseEntity<?> getTempLowerThan(@Nullable @RequestParam("temp") Double temp) {
         if (temp == null) {
@@ -45,7 +39,6 @@ public class MainController {
             return ResponseEntity.ok(result);
         }
     }
-
     @GetMapping(value = "/temp/greaterThan")
     public ResponseEntity<?> getTempHigherThan(@Nullable @RequestParam("temp") Double temp) {
         if (temp == null) {
@@ -55,7 +48,6 @@ public class MainController {
             return ResponseEntity.ok(result);
         }
     }
-
     @GetMapping(value = "/temp/between")
     public ResponseEntity<?> getTempBetween(@Nullable @RequestParam("temp1") Double temp1,
                                          @Nullable @RequestParam("temp2") Double temp2) {
@@ -66,7 +58,6 @@ public class MainController {
             return ResponseEntity.ok(result);
         }
     }
-
     @GetMapping(value = "/date/before")
     public ResponseEntity<?> getDateBefore(@Nullable @RequestParam("date") String date) {
         if (date == null) {
@@ -76,7 +67,6 @@ public class MainController {
             return ResponseEntity.ok(result);
         }
     }
-
     @GetMapping(value = "/date/after")
     public ResponseEntity<?> getDateAfter(@Nullable @RequestParam("date") String date) {
         if (date == null) {
@@ -86,7 +76,6 @@ public class MainController {
             return ResponseEntity.ok(result);
         }
     }
-
     @GetMapping(value = "/date/between")
     public ResponseEntity<?> getDateBetween(@Nullable @RequestParam("date1") String date1,
                                          @Nullable @RequestParam("date2") String date2) {
