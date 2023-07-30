@@ -1,4 +1,4 @@
-# localAPI server Part 2: Data API
+# MyApp Part 2: Data API
 
 Welcome to Part 2 of MyApp, the Data API component. This part is a Java application built using the Spring framework, and it serves as an API for the collected data stored in the MySQL database. The Data API provides endpoints to access and manipulate the data collected by the Data Collector component (Part 1). This component is containerized using Docker for easy deployment and scalability.
 
